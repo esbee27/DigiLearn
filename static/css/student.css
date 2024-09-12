@@ -1,0 +1,135 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+:root {
+  --blue: #030821;
+  --gray: #3b5ca5;
+}
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--blue);
+  color: aliceblue;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header nav h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+header nav ul li a:hover {
+  background-color: var(--gray);
+  border-radius: 5px;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--blue);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.dashboard {
+  margin-bottom: 40px;
+}
+
+.progress h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.course-progress {
+  margin-bottom: 20px;
+}
+
+.course-progress h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar span {
+  display: block;
+  height: 20px;
+  background-color: var(--blue);
+}
+
+.profile .form-group {
+  margin-bottom: 20px;
+}
+
+.profile .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile .form-group input,
+.profile .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile .form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.profile button {
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  background-color: rgba(3, 8, 21, 0.86);
+}
