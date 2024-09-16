@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiLearn</title>
+    <link rel="stylesheet" href="../static/css/courses.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>My Dashboard</h1>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="{{ url_for('auth.course_page', course=current_user.course)}}">Course</a></li>
+          <li><a href="{{ url_for('auth.profile')}}">Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
+    <section class="feedback">
+      <h3>Student Feedback</h3>
+      <p>Share your experience with this course!</p>
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label for="feedback">Your Feedback:</label>
+          <textarea id="feedback" name="feedback"></textarea>
+        </div>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </section>
+</main>
+
+<script src="js/courses.js"></script>
+</body>
+</html>

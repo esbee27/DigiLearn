@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/css/student.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>DigiLearn</h1>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="{{ url_for('auth.course_page', course=current_user.course)}}">Courses</a></li>
+          <li><a href="{{ url_for('auth.profile')}}">Profile</a></li>
+          <li><a href="">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="dashboard">
+        <h2>Welcome, {{ current_user.first_name }}</h2>
+        <div class="progress">
+          <h3>Your Progress</h3>
+          <div class="course-progress">
+            <h4>{{ current_user.course }}</h4>
+            <div class="progress-bar" data-progress="75%">
+              <span style="width: 0%"></span>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <section class="profile">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value="{{ current_user.first_name }}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="{{ current_user.email }}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio">[Student Bio]</textarea>
+          </div>
+          <button type="submit">Save Changes</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="../static/js/student.js"></script>
+  </body>
+</html>
