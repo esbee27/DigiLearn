@@ -22,7 +22,11 @@
         <ul>
           <li><a href="#home">home</a></li>
           {% if current_user.is_authenticated %}
-          <li><a href="{{ url_for('auth.course_page', course=current_user.course) }}">dashboard</a></li>
+          <li><a href="{{ url_for('auth.course_page', course=current_user.course) }}">
+            dashboard</a></li>
+          <li>
+            <a href="/logout"><button>logout</button></a>
+          </li>
           {% else %}
           <li><a href="#about">about</a></li>
           <li><a href="#course">courses</a></li>
@@ -42,14 +46,12 @@
     <!-- home section starts -->
     <section class="home" id="home">
       <div class="content">
-        <h1>master digital skills, anytime, anywhere</h1>
+        <h1>Master digital skills, anytime, anywhere</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          mollitia quo incidunt qui ipsa, libero minus, alias atque dignissimos
-          nobis suscipit ipsam! Cumque, veniam? Reprehenderit officia dicta
-          culpa necessitatibus est.
+          Learn digital skills from the comfort of your home. Get access to resources to help you kickstart your journey 
+          in the digital business world.
         </p>
-        <a href="#"><button>discover more</button></a>
+        <a href="#course"><button>discover more</button></a>
       </div>
 
       <div class="box-container">
@@ -57,8 +59,7 @@
           <i class="fas fa-fire"></i>
           <a href="/signup"><h3>Sign Up</h3></a>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur,
-            neque.
+            Register now to gain access to our free online resources and start learning.
           </p>
         </div>
 
@@ -66,8 +67,7 @@
           <i class="fas fa-graduation-cap"></i>
           <a href="#courses"><h3>trending courses</h3></a>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            voluptatem!
+            See our list of courses.
           </p>
         </div>
 
@@ -75,8 +75,7 @@
           <i class="fas fa-award"></i>
           <h3>certifications</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-            laborum?
+            Get a certificate on completion of a course.
           </p>
         </div>
       </div>
@@ -86,7 +85,7 @@
     <!-- about section starts -->
     <section class="about" id="about">
       <h1 class="heading">about us</h1>
-      <h3 class="title">start your journey into tech with us</h3>
+      <h3 class="title">Start your journey in tech with us</h3>
       <div class="row">
         <div class="content">
           <h3>Empower Your Future with Expert-Led Digital Skills Training</h3>
@@ -138,7 +137,7 @@
 
         <div class="card">
           <img src="../static/images/Mariam.jpg" alt="" />
-          <h3>John Smith</h3>
+          <h3>Mariam</h3>
           <p>CSS3 Tutor</p>
           <div class="icons">
             <a href="#" class="fab fa-facebook-f"></a>
@@ -168,7 +167,7 @@
     <section id="course" class="course">
       <h1 class="heading">our courses</h1>
       <h3 class="title">
-        upgrade your skills with our crefully curated courses
+        Upgrade your skills with our crefully curated courses
       </h3>
 
       <div class="box-container">
@@ -176,8 +175,7 @@
           <i class="fab fa-html5"></i>
           <h3>html5</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            numquam?
+            Learn how to build web pages with HTML5.
           </p>
         </div>
 
@@ -185,8 +183,7 @@
           <i class="fab fa-css3-alt"></i>
           <h3>css3</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            numquam?
+            Learn how to design web pages using CSS3.
           </p>
         </div>
 
@@ -194,17 +191,8 @@
           <i class="fab fa-js-square"></i>
           <h3>javascript</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            numquam?
-          </p>
-        </div>
-
-        <div class="box">
-          <i class="fas fa-code"></i>
-          <h3>web development</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            numquam?
+            Learn how to use javascript to make your web pages look more interesting and
+            interactive. 
           </p>
         </div>
 
@@ -212,8 +200,8 @@
           <i class="fas fa-bullhorn"></i>
           <h3>digital marketing</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            numquam?
+            Learn how to improve sales online and get more clients and actions on your websites with
+            our digital marketing course.
           </p>
         </div>
 
@@ -222,8 +210,9 @@
             ><i class="fas fa-paint-brush"></i>
             <h3>graphic design</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              numquam?
+              Learn how to design beautiful ecards, logos, fliers and more. This couse
+              will teach you the basics of graphics design; colors, lines,
+               shapes and lots more.
             </p></a
           >
         </div>

@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dashboard</title>
+{% extends 'base.html' %}
+{% block content %}
     <link rel="stylesheet" href="../static/css/student.css" />
-    <!-- Font Awesome Cdn Link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <h1>DigiLearn</h1>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="{{ url_for('auth.course_page', course=current_user.course)}}">Courses</a></li>
-          <li><a href="{{ url_for('auth.profile')}}">Profile</a></li>
-          <li><a href="">Logout</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
       <section class="dashboard">
         <h2>Welcome, {{ current_user.first_name }}</h2>
@@ -67,7 +45,4 @@
         </form>
       </section>
     </main>
-
-    <script src="../static/js/student.js"></script>
-  </body>
-</html>
+{% endblock %}

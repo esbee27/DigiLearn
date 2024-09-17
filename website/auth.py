@@ -6,6 +6,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
+
+"""Login route"""
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -24,6 +26,8 @@ def login():
 
     return render_template("login.html")
 
+
+"""Sign up route"""
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -60,17 +64,18 @@ def signup():
     return render_template('signup.html')
 
 
+"""Course page route"""
 @auth.route('/dashboard/<course>')
 def course_page(course):
     if 'email' not in session:
         return redirect(url_for('auth.login'))
     
     course_templates = {
-        'javascript': 'javascript.html',
-        'html5': 'html5.html',
-        'digital': 'digital.html',
-        'graphics': 'graphic_design.html',
-        'css3': 'css3.html'
+        'JavaScript': 'javascript.html',
+        'HTML5': 'html5.html',
+        'Digital Marketing': 'digital.html',
+        'Graphics Design': 'graphic_design.html',
+        'CSS3': 'css3.html'
     }
 
     if course in course_templates:
@@ -83,10 +88,14 @@ def course_page(course):
 def dashboard():
     return render_template('profile.html')
 
+
+"""User's profile route"""
 @auth.route('/profile')
 def profile():
     return render_template('profile.html')
 
+
+"""Logout route"""
 @auth.route('/logout')
 def logout():
     session.pop('current_user.email', None)

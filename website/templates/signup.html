@@ -7,6 +7,17 @@
         <link rel="stylesheet" href="../static/css/signup.css" />
       </head>
       <body>
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %} {% for category, message in messages %} {% if category == 'error' %}
+        <div class="error" role="alert">
+          {{ message }}
+        </div>
+        {% else %}
+        <div class="success" role="alert">
+          {{ message }}
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+
         <div class="container">
           <div class="login">
             <form method="POST">
@@ -18,11 +29,11 @@
               <input type="email" placeholder="Email" name="email"/>
               <input type="text" placeholder="Phone no" name="phone"/>
               <select id="course" class="input_select" name="course">
-                <option value="css3">CSS</option>
-                <option value="graphics">Graphics Design</option>
-                <option value="html5">HTML5</option>
-                <option value="digital">Digital Marketing</option>
-                <option value="javascript">JavaScript</option>
+                <option value="CSS3">CSS</option>
+                <option value="Graphics Design">Graphics Design</option>
+                <option value="HTML5">HTML5</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="JavaScript">JavaScript</option>
 
 
               </select>
