@@ -25,7 +25,7 @@
               type="text"
               id="fullName"
               name="fullName"
-              value="{{ current_user.first_name }}"
+              value="{{ current_user.first_name }} {{ current_user.surname}}"
             />
           </div>
           <div class="form-group">
@@ -37,6 +37,34 @@
               value="{{ current_user.email }}"
             />
           </div>
+          <div class="form-group"></div>
+            <label for="email">Gender:</label>
+            <input
+              type="text"
+              id="gender"
+              name="gender"
+              value="{{ current_user.gender }}"
+            />
+          </div>
+          <div class="form-group"></div>
+            <label for="email">Birthday:</label>
+            <input
+              type="text"
+              id="birthday"
+              name="birthday"
+              value="{{ current_user.birthday }}"
+            />
+          </div>
+          <div class="form-group"></div>
+            <label for="email">Date Registered:</label>
+            <input
+              type="text"
+              id="date"
+              name="date"
+              value="{{ current_user.date }}"
+            />
+          </div>
+          
           <div class="form-group">
             <label for="bio">Bio:</label>
             <textarea id="bio" name="bio">[Student Bio]</textarea>

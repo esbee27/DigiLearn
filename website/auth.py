@@ -36,6 +36,8 @@ def signup():
         email = request.form.get('email')
         phone = request.form.get('phone')
         course = request.form.get('course')
+        gender = request.form.get('gender')
+        birthday = request.form.get('birthday')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
@@ -54,7 +56,9 @@ def signup():
             flash("Passwords do not match", category='error')
         else:
             new_user = Student(first_name=first_name, phone=phone, email=email,
-                               surname=surname, course=course, password=generate_password_hash(password1))
+                               surname=surname, course=course, 
+                               birthday=birthday, gender=gender, 
+                               password=generate_password_hash(password1))
             db.session.add(new_user)
             db.session.commit()
             session['email'] = email

@@ -13,5 +13,6 @@ class Student(db.Model, UserMixin):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     course = db.Column(db.String(40))
     phone = db.Column(db.Integer)
+    gender = db.Column(db.String(150))
     password = db.Column(db.String(150))
 
