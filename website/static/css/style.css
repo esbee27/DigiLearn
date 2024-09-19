@@ -502,7 +502,8 @@ header .fa-times {
   }
 
   header .navbar ul {
-    flex-flow: column;
+    display: flex;
+    flex-direction: column;
     padding: 2rem 0;
   }
 
