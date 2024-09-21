@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Confirmed</title>
+</head>
+<body>
+    <h1>Session Booked Successfully!</h1>
+    <p>Thank you for booking a session with {{ mentor }}.</p>
+    <p>Here are the contact details to reach your mentor:</p>
+    <ul>
+        <li>Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
+        <li>WhatsApp: <a href="https://wa.me/{{ whatsapp.replace(' ', '') }}">Message on WhatsApp</a></li>
+    </ul>
+    <p>Your message: "{{ message }}"</p>
+</body>
+</html>
+

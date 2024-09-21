@@ -104,3 +104,46 @@ def profile():
 def logout():
     session.pop('current_user.email', None)
     return redirect(url_for('auth.login'))
+
+
+"""Mentors segment"""
+
+# Route to display the booking form
+
+# Route to handle form submission and display mentor details
+@auth.route('/book_session', methods=['POST', 'GET'])
+def book_session():
+    if request.method == 'POST':
+        mentor_name = request.form['mentor']
+        message = request.form['message']
+
+     # Mentors data
+        mentors = {
+        "Blessing Ebele": {
+        "email": "ogorblessing96@gmail.com",
+        "whatsapp": "+234 901 459 9651"
+        },
+        "Miracle Amajama": {
+        "email": "miraclemajama14@gmail.com",
+        "whatsapp": "+234 706 518 1830"
+        }
+        }
+        
+        user_name = request.form['name']
+        mentor_name = request.form['mentor']
+        message = request.form['message']
+        
+        if mentor_name in mentors:
+            mentor_details = mentors[mentor_name]
+            email = mentor_details['email']
+            whatsapp = mentor_details['whatsapp']
+            return redirect(url_for('auth.session_confirm', mentor=mentor_name, 
+                                   email=email, whatsapp=whatsapp, message=message))
+        else:
+            return "Mentor not found", 404
+    return render_template('book_session.html')
+
+
+@auth.route('/session_confirm')
+def session_confirm():
+    return render_template('session_confirm.html')

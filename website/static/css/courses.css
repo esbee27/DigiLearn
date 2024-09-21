@@ -112,7 +112,7 @@ header nav ul li a:hover {
   font-weight: bold;
 }
 
-.feedback .form-group textarea {
+.feedback .form-group textarea .form-group{
   width: 100%;
   height: 100px;
   padding: 10px;

@@ -27,11 +27,7 @@
       <h3>Book a session with our mentors</h3>
       <p>Our mentors are available to help you when you have questions.</p>
       <form id="feedbackForm">
-        <div class="form-group">
-          <label for="feedback">Your message:</label>
-          <textarea id="feedback" name="feedback"></textarea>
-        </div>
-        <a href="Wa.me/+2349014599651"><button type="submit">Book a session</button></a>
+        <button type="submit"><a href="{{ url_for('auth.book_session')}}">Book</a></button>
       </form>
     </section>
   </section>
